@@ -1,0 +1,8 @@
+[Pp]ackages/
+[Bb]in/
+[Dd]ebug/
+[Oo]bj/
+*.dll
+*.suo
+
+*/Week 3.v12.suo
