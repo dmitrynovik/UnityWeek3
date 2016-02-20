@@ -2,7 +2,9 @@
 [Bb]in/
 [Dd]ebug/
 [Oo]bj/
+[Tt]emp/
+ShaderCache/
 *.dll
 *.suo
+*.log
 
-*/Week 3.v12.suo
