@@ -87,7 +87,15 @@ public class Player : MonoBehaviour {
 			rb.velocity = Vector3.zero;
 			rb.position = currentPos;
 		}
-
-
 	}
+
+    void OnCollisionEnter(Collision collision)
+    {
+        var go = collision.collider.gameObject;
+        if (go.tag == "Enemy")
+        {
+            Debug.Log("Enemy inactivated!");
+            go.SetActive(false);
+        }
+    }
 }
