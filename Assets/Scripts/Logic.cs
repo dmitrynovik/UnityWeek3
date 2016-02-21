@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class Logic : MonoBehaviour {
 
@@ -17,14 +18,23 @@ public class Logic : MonoBehaviour {
 	{
 	    enemies = new Enemy[enemiesPerLine * lines];
 	    SpawnEnemies();
-	    //StartCoroutine(Respawn());
+	    StartCoroutine(Respawn());
 	}
 
     private IEnumerator Respawn()
     {
+        const float secsWait = 3;
+
         while (true)
         {
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(secsWait);
+
+            foreach (Enemy t in enemies.Where(t => !t.gameObject.activeSelf))
+            {
+                Debug.Log("Reactivating an enemy");
+                t.gameObject.SetActive(true);
+                break;
+            }
         }
     }
 

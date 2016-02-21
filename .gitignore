@@ -4,6 +4,7 @@
 [Oo]bj/
 [Tt]emp/
 ShaderCache/
+[Mm]etadata/
 *.dll
 *.suo
 *.log
